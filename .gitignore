@@ -39,3 +39,7 @@
 
 # debug information files
 *.dwo
+
+# VS2022
+out/
+.vs/
