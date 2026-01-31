@@ -1,6 +1,8 @@
 ﻿# CMakeList.txt : CMake project for CMakeProject1, include source and define
 # project specific logic here.
 #
+find_package(OpenGL REQUIRED)
+
 add_library(imgui_lib STATIC
     ${imgui_SOURCE_DIR}/imgui.cpp
     ${imgui_SOURCE_DIR}/imgui_draw.cpp
@@ -19,7 +21,7 @@ target_include_directories(imgui_lib PUBLIC
 
 # Add source to this project's executable.
 add_executable (CMakeProject1 "CMakeProject1.cpp" "CMakeProject1.h")
-target_link_libraries(CMakeProject1 imgui_lib glfw opengl32)
+target_link_libraries(CMakeProject1 imgui_lib glfw OpenGL::GL)
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET CMakeProject1 PROPERTY CXX_STANDARD 20)

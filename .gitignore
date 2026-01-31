@@ -43,3 +43,6 @@
 # VS2022
 out/
 .vs/
+
+# Cmake
+build/
